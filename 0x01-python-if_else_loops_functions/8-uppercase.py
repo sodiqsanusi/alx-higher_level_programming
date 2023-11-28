@@ -5,4 +5,4 @@ def uppercase(str):
         if (asc > 96) and (asc < 123):
             asc = asc - 32
         print('{:c}'.format(asc), end='')
-    print('{:c}'.format(10))
+    print('{:c}'.format(10), end='')
