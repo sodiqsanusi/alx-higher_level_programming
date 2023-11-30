@@ -9,4 +9,7 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print(f"{violet:d} arguments:")
-    print(lilac)
+    count = 0
+    for word in lilac:
+        count += 1
+        print(f"{count:d}: {word}")
