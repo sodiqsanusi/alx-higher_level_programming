@@ -7,8 +7,8 @@ class Rectangle:
     """This is an empty class representing a rectangle"""
     def __init__(self, width=0, height=0):
         """This is an instance method that runs on object creation"""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
