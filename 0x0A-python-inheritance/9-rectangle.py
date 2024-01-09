@@ -24,4 +24,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """A magic method that runs when str or print is called"""
-        return ("[Rectangle] {}/{}".format(self.__width, self.__height))
+        return (f"[{type(self).__name__}] {self.__width}/{self.__height}")
