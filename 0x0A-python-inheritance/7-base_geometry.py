@@ -1,17 +1,30 @@
 #!/usr/bin/python3
 
-"""Contains a minimal class with two public methods"""
+
+"""A module with a class that models geometric shapes."""
 
 
-class BaseGeometry():
-    """This class contains some functions that builds on mathematics"""
+class BaseGeometry:
+    """A base class for geometry shapes."""
+
     def area(self):
-        """Main function is to raise an exception"""
+        """Returns the area of a shape"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """A function that validates a value, is the"""
+        """
+        Performs validation of integer values.
+
+        Args:
+            name (str): The name of the object.
+            value (int): The value of the object.
+
+        Raises:
+            TypeError: When the `value` given to the object is not an integer.
+            ValueError: When the the `value` is less than or equal to zero.
+        """
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError(f"{name} must be an integer")
+
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")
