@@ -9,6 +9,6 @@ class MyInt(int):
         """Dunder method for the == operator"""
         return (super().__ne__(__value))
 
-    def __new__(self, __value):
+    def __ne__(self, __value):
         """Dunder method for the != operator"""
         return (super().__eq__(__value))
