@@ -12,6 +12,6 @@ def save_to_json_file(my_obj, filename):
         my_obj (object): Object to be serialized
         filename (str): Name of file to save JSON into
     """
-    lilac = json.dumps(my_obj)
     with open(filename, "w", encoding="utf-8") as createdFile:
+        lilac = json.dumps(my_obj)
         createdFile.write(lilac)
