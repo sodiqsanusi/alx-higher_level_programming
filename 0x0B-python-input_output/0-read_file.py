@@ -7,4 +7,4 @@ def read_file(filename=""):
     """Opens a text file encoded in utf-8, prints to stdout"""
     with open(filename, "r", encoding="utf-8") as openedFile:
         lilac = openedFile.read()
-        print(lilac)
+        print(lilac, end="")
