@@ -116,7 +116,7 @@ class Rectangle(Base):
         """
         return (
             f"[{type(self).__name__}] ({self.id}) "
-            f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
+            f"{self.x}/{self.y} - {self.width}/{self.height}"
         )
 
     def update(self, *args, **kwargs):
