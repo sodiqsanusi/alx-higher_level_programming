@@ -50,6 +50,10 @@ class Base:
         Args:
             list_objs (obj): List whose JSON representation will be saved
         """
+        fileName = cls.__name__ + ".json"
+        with open(fileName, "w", encoding="utf-8") as openedFile:
+            jsonData = cls.to_json_string(list_objs)
+            openedFile.write(jsonData)
 
     @staticmethod
     def from_json_string(json_string):
