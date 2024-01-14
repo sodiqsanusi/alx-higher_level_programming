@@ -2,6 +2,7 @@
 
 """A module containing a base class to be used in other modules"""
 import json
+from models.rectangle import Rectangle
 
 
 class Base:
@@ -78,3 +79,6 @@ class Base:
         Args:
             **dictionary: Keyword arguments, used to create new instance
         """
+        newInstance = Rectangle(5, 5)
+        newInstance.update(**dictionary)
+        return (newInstance)
