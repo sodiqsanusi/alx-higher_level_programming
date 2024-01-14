@@ -118,3 +118,16 @@ class Rectangle(Base):
             f"[{type(self).__name__}] ({self.id}) "
             f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
         )
+
+    def update(self, *args):
+        """
+        Updates the attributes of the instance based on the args given
+        """
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
