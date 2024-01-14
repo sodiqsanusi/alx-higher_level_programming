@@ -66,6 +66,9 @@ class Base:
         Returns:
             (obj): The correspoding object rep of the JSON string provided
         """
+        if (json_string is None) or (len(json_string) < 1):
+            return ([])
+        return (json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
