@@ -119,10 +119,14 @@ class Rectangle(Base):
             f"{self.__x}/{self.__y} - {self.__width}/{self.__height}"
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updates the attributes of the instance based on the args given
         """
+        if (args is None) or (len(args) < 1):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+            return
         try:
             self.id = args[0]
             self.width = args[1]
