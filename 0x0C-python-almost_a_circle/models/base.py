@@ -38,6 +38,9 @@ class Base:
         Returns:
             str: A JSON string representation of the given list parameter
         """
+        if (list_dictionaries is None) or (len(list_dictionaries) < 1):
+            return ("[]")
+        return (json.dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
