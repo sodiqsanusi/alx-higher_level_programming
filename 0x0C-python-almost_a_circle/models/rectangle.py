@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """This module contains the class Rectangle, with parent class Base"""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
