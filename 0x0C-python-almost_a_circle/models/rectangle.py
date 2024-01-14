@@ -101,7 +101,11 @@ class Rectangle(Base):
         """
         Prints a string representation of the rectangle to stdout
         """
+        for b in range(self.__y):
+            print()
         for i in range(self.__height):
+            for t in range(self.__x):
+                print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
             print()
