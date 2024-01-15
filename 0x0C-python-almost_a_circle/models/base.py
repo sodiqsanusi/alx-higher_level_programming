@@ -2,6 +2,7 @@
 
 """A module containing a base class to be used in other modules"""
 import json
+import os
 from models.rectangle import Rectangle
 
 
@@ -82,3 +83,20 @@ class Base:
         newInstance = Rectangle(5, 5)
         newInstance.update(**dictionary)
         return (newInstance)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Get a list of instances from a JSON file
+        """
+        fileName = cls.__name__ + ".json"
+        if not os.path.exists(fileName):
+            return ([])
+        allInstances = []
+        with open(fileName, "r", encoding="utf-8") as openedFile:
+            content = openedFile.read()
+            listDictionaries = cls.from_json_string(content)
+            for dictionary in listDictionaries:
+                allInstances.append(cls.create(**dictionary))
+
+        return (allInstances)
