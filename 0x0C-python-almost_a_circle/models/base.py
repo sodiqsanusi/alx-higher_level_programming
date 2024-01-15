@@ -1,4 +1,4 @@
-#!/usr/python/bin
+#!/usr/bin/python3
 
 """A module containing a base class to be used in other modules"""
 import json
