@@ -1,4 +1,5 @@
--- Lists all records in teh table with restrictions on what to list
+-- Lists all records in the table with restrictions
+
 SELECT score, name from second_table
-WHERE name IS NOT NULL AND name != ""
+HAVING name IS NOT NULL
 ORDER BY score DESC;
