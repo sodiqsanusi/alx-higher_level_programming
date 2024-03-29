@@ -10,7 +10,7 @@ def main():
     """
     This is the main function for the program
     """
-    url = "http://7fcf1e331834.3e24de83.alx-cod.online:5000/search_user"
+    url = "http://0.0.0.0:5000/search_user"
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
     data = {"q": letter}
     res = requests.post(url, data)
