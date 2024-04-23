@@ -24,6 +24,7 @@ request(url, function (error, response, body) {
   if (error) {
     console.error(error);
     process.exitCode = 1;
+    return;
   }
   finalResponse = JSON.parse(body);
   const person = 'https://swapi-api.alx-tools.com/api/people/18/';
