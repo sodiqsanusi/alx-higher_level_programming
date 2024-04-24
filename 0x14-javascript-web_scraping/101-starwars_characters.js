@@ -5,10 +5,12 @@
 */
 
 const request = require('request');
+const util = require('util');
 const id = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/films/' + id;
+const requestPromise = util.promisify(request);
 
-request(url, function (error, response, body) {
+request(url, async function (error, response, body) {
   if (error) {
     console.error(error);
     process.exitCode = 1;
@@ -16,14 +18,8 @@ request(url, function (error, response, body) {
   }
   const data = JSON.parse(body).characters;
   for (const character of data) {
-    request(character, function (error, response, body) {
-      if (error) {
-        console.error(error);
-        process.exitCode = 1;
-        return;
-      }
-      const name = JSON.parse(body).name;
-      console.log(name);
-    });
+    let response = await requestPromise(character);
+    response = JSON.parse(response.body);
+    console.log(response.name);
   }
 });
