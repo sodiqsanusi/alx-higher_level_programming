@@ -15,10 +15,10 @@ request(url, function (error, response, body) {
   const data = JSON.parse(body);
   const finalObj = {};
   for (const todo of data) {
-    if (!(todo.userId in finalObj)) {
-      finalObj[todo.userId] = 0;
-    }
     if (todo.completed) {
+      if (!(todo.userId in finalObj)) {
+        finalObj[todo.userId] = 0;
+      }
       finalObj[todo.userId] += 1;
     }
   }
