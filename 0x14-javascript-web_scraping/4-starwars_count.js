@@ -13,7 +13,7 @@ request(url, function (error, response, body) {
     process.exitCode = 1;
     return;
   }
-  films = JSON.parse(body).results;
+  const films = JSON.parse(body).results;
   const wedgeAntillesMovies = films.filter((film) => {
     return film.characters.some((character) => {
       return character.endsWith('/18/');
