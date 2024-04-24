@@ -24,6 +24,6 @@ request(url, function (error, response, body) {
       }
       const name = JSON.parse(body).name;
       console.log(name);
-    })
+    });
   }
 });
